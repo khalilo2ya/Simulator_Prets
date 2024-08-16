@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap">
-
 </head>
 <body>
     <div class="container">
@@ -26,31 +25,34 @@
             <input type="number" id="years" name="years" required>
 
             <button type="button" onclick="calculateLoan()">احسب القرض</button>
+            <button type="button" onclick="clearForm()" class="btn-danger" >مسح</button>
         </form>
 
-        <h2>تفاصيل القرض</h2>
-        <div id="loanDetails">
+        <div id="loanDetails" class="hidden">
+            <h2>تفاصيل القرض</h2>
             <p>مبلغ القرض: <span id="loanAmount"></span> د.ت</p>
             <p>القسط الشهري: <span id="monthlyPayment"></span> د.ت</p>
             <p>قيمة الفائدة الإجمالية: <span id="totalInterest"></span> د.ت</p>
             <p>المبلغ الجملي للسداد: <span id="totalRepayment"></span> د.ت</p>
         </div>
 
-        <h2>تفاصيل السداد</h2>
-        <table id="loanTable">
-            <thead>
-                <tr>
-                    <th>رقم السداد</th>
-                    <th>القسط الشهري</th>
-                    <th>القسط الأساسي</th>
-                    <th>الفائدة</th>
-                    <th>الرصيد المتبقي</th>
-                </tr>
-            </thead>
-            <tbody id="scheduleBody">
-                <!-- سيتم إدراج التفاصيل هنا -->
-            </tbody>
-        </table>
+        <div id="loanTableContainer" class="hidden">
+            <h2>تفاصيل السداد</h2>
+            <table id="loanTable">
+                <thead>
+                    <tr>
+                        <th>رقم السداد</th>
+                        <th>القسط الشهري</th>
+                        <th>القسط الأساسي</th>
+                        <th>الفائدة</th>
+                        <th>الرصيد المتبقي</th>
+                    </tr>
+                </thead>
+                <tbody id="scheduleBody">
+                    <!-- سيتم إدراج التفاصيل هنا -->
+                </tbody>
+            </table>
+        </div>
     </div>
     
     <footer>

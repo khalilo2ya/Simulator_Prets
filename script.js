@@ -4,6 +4,12 @@ function calculateLoan() {
     const annualRate = parseFloat(document.getElementById('annualRate').value) / 100;
     const years = parseInt(document.getElementById('years').value);
 
+    // التحقق من صحة القيم المدخلة
+    if (isNaN(principal) || principal <= 0 || isNaN(annualRate) || annualRate < 0 || isNaN(years) || years <= 0) {
+        // لا تظهر رسالة خطأ، فقط لا تعرض النتائج
+        return;
+    }
+
     // حساب القسط الشهري
     const monthlyRate = annualRate / 12;
     const numberOfPayments = years * 12;
@@ -40,4 +46,17 @@ function calculateLoan() {
 
     // إدراج جدول السدادات
     document.getElementById('scheduleBody').innerHTML = scheduleBody;
+
+    // إظهار النتائج
+    document.getElementById('loanDetails').classList.remove('hidden');
+    document.getElementById('loanTableContainer').classList.remove('hidden');
+}
+
+function clearForm() {
+    // إعادة تعيين القيم في النموذج
+    document.getElementById('loanForm').reset();
+
+    // إخفاء النتائج
+    document.getElementById('loanDetails').classList.add('hidden');
+    document.getElementById('loanTableContainer').classList.add('hidden');
 }
