@@ -1,25 +1,57 @@
 function calculateLoan() {
-    // الحصول على القيم من النموذج
-    const principal = parseFloat(document.getElementById('principal').value);
-    const annualRate = parseFloat(document.getElementById('annualRate').value) / 100;
-    const years = parseInt(document.getElementById('years').value);
+    // Obtaining values from the form
+    const principalInput = document.getElementById('principal');
+    const annualRateInput = document.getElementById('annualRate');
+    const yearsInput = document.getElementById('years');
 
-    // التحقق من صحة القيم المدخلة
-    if (isNaN(principal) || principal <= 0 || isNaN(annualRate) || annualRate < 0 || isNaN(years) || years <= 0) {
-        // لا تظهر رسالة خطأ، فقط لا تعرض النتائج
+    const principal = parseFloat(principalInput.value);
+    const annualRate = parseFloat(annualRateInput.value) / 100;
+    const years = parseInt(yearsInput.value);
+
+    let isValid = true;
+
+    // Validate inputs
+    if (isNaN(principal) || principal <= 0) {
+        principalInput.classList.add('is-invalid');
+        isValid = false;
+    } else {
+        principalInput.classList.remove('is-invalid');
+        principalInput.classList.add('is-valid');
+    }
+
+    if (isNaN(annualRate) || annualRate < 0) {
+        annualRateInput.classList.add('is-invalid');
+        isValid = false;
+    } else {
+        annualRateInput.classList.remove('is-invalid');
+        annualRateInput.classList.add('is-valid');
+    }
+
+    if (isNaN(years) || years <= 0) {
+        yearsInput.classList.add('is-invalid');
+        isValid = false;
+    } else {
+        yearsInput.classList.remove('is-invalid');
+        yearsInput.classList.add('is-valid');
+    }
+
+    if (!isValid) {
+        // Do not show results if any input is invalid
+        document.getElementById('loanDetails').classList.add('hidden');
+        document.getElementById('loanTableContainer').classList.add('hidden');
         return;
     }
 
-    // حساب القسط الشهري
+    // Calculate monthly payment
     const monthlyRate = annualRate / 12;
     const numberOfPayments = years * 12;
     const monthlyPayment = principal * (monthlyRate * Math.pow(1 + monthlyRate, numberOfPayments)) / (Math.pow(1 + monthlyRate, numberOfPayments) - 1);
 
-    // حساب إجمالي الفائدة
+    // Calculate total interest
     const totalRepayment = monthlyPayment * numberOfPayments;
     const totalInterest = totalRepayment - principal;
 
-    // إعداد جدول السدادات
+    // Prepare amortization schedule
     let balance = principal;
     let scheduleBody = '';
     for (let i = 1; i <= numberOfPayments; i++) {
@@ -30,33 +62,38 @@ function calculateLoan() {
         scheduleBody += `
             <tr>
                 <td>${i}</td>
-                <td>${monthlyPayment.toFixed(2)} د.ت</td>
-                <td>${principalPayment.toFixed(2)} د.ت</td>
-                <td>${interestPayment.toFixed(2)} د.ت</td>
-                <td>${Math.max(balance, 0).toFixed(2)} د.ت</td>
+                <td>${monthlyPayment.toFixed(3)} </td>
+                <td>${principalPayment.toFixed(3)} </td>
+                <td>${interestPayment.toFixed(3)} </td>
+                <td>${Math.max(balance, 0).toFixed(3)} </td>
             </tr>
         `;
     }
     
-    // عرض المعلومات الإجمالية
-    document.getElementById('loanAmount').textContent = principal.toFixed(2);
-    document.getElementById('monthlyPayment').textContent = monthlyPayment.toFixed(2);
-    document.getElementById('totalInterest').textContent = totalInterest.toFixed(2);
-    document.getElementById('totalRepayment').textContent = totalRepayment.toFixed(2);
+    // Display results
+    document.getElementById('loanAmount').textContent = principal.toFixed(3);
+    document.getElementById('monthlyPayment').textContent = monthlyPayment.toFixed(3);
+    document.getElementById('totalInterest').textContent = totalInterest.toFixed(3);
+    document.getElementById('totalRepayment').textContent = totalRepayment.toFixed(3);
 
-    // إدراج جدول السدادات
+    // Insert schedule table
     document.getElementById('scheduleBody').innerHTML = scheduleBody;
 
-    // إظهار النتائج
+    // Show results
     document.getElementById('loanDetails').classList.remove('hidden');
     document.getElementById('loanTableContainer').classList.remove('hidden');
 }
 
 function clearForm() {
-    // إعادة تعيين القيم في النموذج
+    // Reset form values
     document.getElementById('loanForm').reset();
 
-    // إخفاء النتائج
+    // Hide results
     document.getElementById('loanDetails').classList.add('hidden');
     document.getElementById('loanTableContainer').classList.add('hidden');
+
+    // Remove validation classes
+    document.querySelectorAll('#loanForm input').forEach(input => {
+        input.classList.remove('is-invalid', 'is-valid');
+    });
 }

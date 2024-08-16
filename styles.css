@@ -184,3 +184,12 @@ button {
 
 }
 
+/* Add this to your styles.css if you need custom styles */
+.is-invalid {
+    border-color: #dc3545 !important;
+}
+
+.is-valid {
+    border-color: #28a745 !important;
+}
+
