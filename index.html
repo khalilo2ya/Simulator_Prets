@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>حاسبة القروض</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>حاسبة القروض</h1>
+        <form id="loanForm">
+            <label for="principal">قيمة القرض:</label>
+            <input type="number" id="principal" name="principal" required>
+
+            <label for="annualRate">سعر الفائدة السنوي (%):</label>
+            <input type="number" id="annualRate" name="annualRate" step="0.01" required>
+
+            <label for="years">مدة القرض (بالسنوات):</label>
+            <input type="number" id="years" name="years" required>
+
+            <button type="button" onclick="calculateLoan()">احسب القرض</button>
+        </form>
+
+        <h2>تفاصيل القرض</h2>
+        <div id="loanDetails">
+            <p>مبلغ القرض: <span id="loanAmount"></span> د.ت</p>
+            <p>القسط الشهري: <span id="monthlyPayment"></span> د.ت</p>
+            <p>قيمة الفائدة الإجمالية: <span id="totalInterest"></span> د.ت</p>
+            <p>المبلغ الجملي للسداد: <span id="totalRepayment"></span> د.ت</p>
+        </div>
+
+        <h2>تفاصيل السداد</h2>
+        <table id="loanTable">
+            <thead>
+                <tr>
+                    <th>رقم السداد</th>
+                    <th>القسط الشهري</th>
+                    <th>القسط الأساسي</th>
+                    <th>الفائدة</th>
+                    <th>الرصيد المتبقي</th>
+                </tr>
+            </thead>
+            <tbody id="scheduleBody">
+                <!-- سيتم إدراج التفاصيل هنا -->
+            </tbody>
+        </table>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
