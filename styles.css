@@ -1,5 +1,10 @@
+/* Apply Cairo font to the entire page */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Cairo', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+
     direction: rtl;
     margin: 0;
     padding: 0;
@@ -7,12 +12,14 @@ body {
 }
 
 .container {
+    
     width: 80%;
     margin: auto;
     padding: 20px;
     background: #fff;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 50px;
 }
 
 h1 {
@@ -115,12 +122,13 @@ h2 {
 
 /* Footer styles */
 footer {
+    margin-top: 50px;
     background-color: #f4f4f4;
     padding: 20px;
     text-align: center;
     position: relative;
     bottom: 0;
-    width: 100%;
+    /* width: 100%; */
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
 }
 
