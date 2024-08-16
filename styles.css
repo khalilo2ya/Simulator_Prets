@@ -111,3 +111,43 @@ h2 {
 #loanDetails span {
     color: #007bff;
 }
+
+
+/* Footer styles */
+footer {
+    background-color: #f4f4f4;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.footer-content h2 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+.footer-content p {
+    margin: 5px 0;
+    font-size: 1.2em;
+}
+
+.footer-content .contact-info {
+    margin-top: 10px;
+}
+
+.footer-content .contact-info a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.footer-content .contact-info a:hover {
+    text-decoration: underline;
+}
+
+.footer-content i {
+    margin-right: 8px;
+    color: #007bff;
+}
