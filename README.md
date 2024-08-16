@@ -27,6 +27,6 @@
 1. استنسخ المستودع:
    ```bash
    git clone https://github.com/khalilo2ya/Simulator_Prets.git
-   ```
+   `
  
  2. افتح ملف index.html في متصفحك
