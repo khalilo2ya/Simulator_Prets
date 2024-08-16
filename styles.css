@@ -1,6 +1,6 @@
 /* Apply Cairo font to the entire page */
 body {
-    font-family: 'Cairo', sans-serif;
+    font-family: 'Cairo', sans-serif !important;
     margin: 0;
     padding: 0;
     line-height: 1.6;
@@ -68,7 +68,7 @@ table, th, td {
 
 th, td {
     padding: 10px;
-    text-align: center;
+    /* text-align: center; */
 }
 
 thead {
@@ -86,7 +86,7 @@ table {
 th, td {
     border: 1px solid #ddd;
     padding: 8px;
-    text-align: center;
+    /* text-align: center; */
 }
 
 thead {
