@@ -38,9 +38,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#contactModal">الاتصال</a>
                     </li>
-                   
+
                 </ul>
-               
+
             </div>
         </div>
     </nav>
@@ -60,12 +60,12 @@
 
             <div class="row">
 
-                <div class="col-md-6">
+                <div class="col">
 
                     <label for="years">مدة القرض (السنوات):</label>
                     <input type="number" id="years" name="years" min="0" max="20" value="0" required>
                 </div>
-                <div class="col-md-6">
+                <div class="col">
                     <label for="months">مدة القرض (الأشهر):</label>
                     <input type="number" id="months" name="months" min="0" max="12" value="0" required>
 
@@ -78,10 +78,34 @@
 
         <div id="loanDetails" class="hidden">
             <h2>تفاصيل القرض</h2>
-            <p>مبلغ القرض: <span id="loanAmount"></span></p>
-            <p>القسط الشهري: <span id="monthlyPayment"></span></p>
-            <p>قيمة الفائدة الإجمالية: <span id="totalInterest"></span></p>
-            <p>المبلغ الجملي للسداد: <span id="totalRepayment"></span></p>
+            <div class="row">
+
+
+                <div class="col">
+                    <p>مبلغ القرض:</p>
+                </div>
+                <div class="col"> <span id="loanAmount"></span></div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <p>القسط الشهري: </p>
+                </div>
+                <div class="col"><span id="monthlyPayment"></span></div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <p>قيمة الفائدة الإجمالية: </p>
+                </div>
+                <div class="col"><span id="totalInterest"></span></div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <p>المبلغ الجملي للسداد: </p>
+                </div>
+                <div class="col"><span id="totalRepayment"></span></div>
+            </div>
+
+
         </div>
 
         <div id="loanTableContainer" class="hidden">
@@ -112,8 +136,10 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <p><i class="fas fa-envelope"></i> <a href="mailto:khalilo2y@hotmail.com">khalilo2y@gmail.com</a></p>
-                    <p><i class="fas fa-phone"></i> <a href="https://wa.me/21629401131" target="_blank">0021629401131</a></p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:khalilo2y@hotmail.com">khalilo2y@gmail.com</a>
+                    </p>
+                    <p><i class="fas fa-phone"></i> <a href="https://wa.me/21629401131"
+                            target="_blank">0021629401131</a></p>
                     <p><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/khalilo2ya/"
                             target="_blank">LinkedIn</a></p>
                     <p><i class="fab fa-facebook"></i> <a href="https://www.facebook.com/profile.php?id=100080065068201"

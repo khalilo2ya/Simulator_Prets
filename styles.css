@@ -76,26 +76,10 @@ thead {
 }
 
 
-/* إضافة تنسيق خاص للجدول الجديد */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-}
-
-th, td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    /* text-align: center; */
-}
-
-thead {
-    background-color: #f4f4f4;
-}
 
 h2 {
     margin-top: 20px;
-    text-align: center;
+     /* text-align: center;  */
 }
 
 
@@ -106,17 +90,18 @@ h2 {
     padding: 15px;
     background-color: #f4f4f4;
     border-radius: 8px;
-    text-align: center;
+    /* text-align: center; */
 }
 
 #loanDetails p {
     margin: 5px 0;
-    font-size: 1.2em;
-    font-weight: bold;
+    font-size: 1em;
+    /* font-weight: bold; */
 }
 
 #loanDetails span {
     color: #007bff;
+    font-weight: bold; 
 }
 
 
