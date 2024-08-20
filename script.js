@@ -110,3 +110,18 @@ function calculateLoan() {
     document.getElementById('loanDetails').classList.remove('hidden');
     document.getElementById('loanTableContainer').classList.remove('hidden');
 }
+
+
+function clearForm() {
+    // Reset form values
+    document.getElementById('loanForm').reset();
+
+    // Hide results
+    document.getElementById('loanDetails').classList.add('hidden');
+    document.getElementById('loanTableContainer').classList.add('hidden');
+
+    // Clear validation classes
+    document.querySelectorAll('input').forEach(input => {
+        input.classList.remove('is-valid', 'is-invalid');
+    });
+}
