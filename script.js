@@ -89,10 +89,10 @@ function calculateLoan() {
         scheduleBody += `
             <tr>
                 <td>${i}</td>
-                <td>${monthlyPayment.toFixed(3)} د.ت</td>
-                <td>${principalPayment.toFixed(3)} د.ت</td>
-                <td>${interestPayment.toFixed(3)} د.ت</td>
-                <td>${Math.max(balance, 0).toFixed(3)} د.ت</td>
+                <td>${monthlyPayment.toFixed(3)}</td>
+                <td>${principalPayment.toFixed(3)}</td>
+                <td>${interestPayment.toFixed(3)}</td>
+                <td>${Math.max(balance, 0).toFixed(3)}</td>
             </tr>
         `;
     }
