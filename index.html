@@ -1,33 +1,53 @@
 <!DOCTYPE html>
 <html lang="ar">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>حاسبة القروض</title>
-    <meta name="description" content="تطبيق حاسبة القروض يساعدك في حساب تفاصيل القروض بما في ذلك القسط الشهري، الفائدة، والرصيد المتبقي.">
+    <meta name="description"
+        content="تطبيق حاسبة القروض يساعدك في حساب تفاصيل القروض بما في ذلك القسط الشهري، الفائدة، والرصيد المتبقي.">
     <meta name="keywords" content="حاسبة القروض, قروض, حساب القروض, مالية">
     <meta name="author" content="Khalil Yahyaoui">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
 </head>
+
 <body>
     <div class="container">
         <h1>محاكي القروض</h1>
+        
+        <div id="alertContainer"></div>
         <form id="loanForm">
             <label for="principal">قيمة القرض:</label>
-            <input type="number" id="principal" name="principal" required>
+            <input type="number" id="principal" min="0" step="500" name="principal" required>
 
             <label for="annualRate">سعر الفائدة السنوي (%):</label>
-            <input type="number" id="annualRate" name="annualRate" step="0.01" required>
+            <input type="number" id="annualRate" name="annualRate" min="0" step="0.01" required>
 
-            <label for="years">مدة القرض (بالسنوات):</label>
-            <input type="number" id="years" name="years" required>
 
+            <div class="row">
+
+                <div class="col col-sm-6">
+
+                    <label for="years">مدة القرض (السنوات):</label>
+                    <input type="number" id="years" name="years" min="0" max="20" value="0" required>
+                </div>
+                <div class="col col-sm-6">
+                    <label for="months">مدة القرض (الأشهر):</label>
+                    <input type="number" id="months" name="months" min="0" max="12" value="0" required>
+
+                </div>
+            </div>
             <button type="button" onclick="calculateLoan()">احسب القرض</button>
-            <button type="button" onclick="clearForm()" class="btn-danger" >مسح</button>
+            <button type="button" onclick="clearForm()" class="btn-danger">مسح</button>
+
         </form>
 
         <div id="loanDetails" class="hidden">
@@ -56,20 +76,24 @@
             </table>
         </div>
     </div>
-    
+
     <footer>
         <div class="footer-content">
             <h2>حول التطبيق</h2>
             <p>تطبيق حاسبة القروض يساعدك في حساب تفاصيل القروض بما في ذلك القسط الشهري، الفائدة، والرصيد المتبقي.</p>
             <div class="contact-info">
                 <p><i class="fas fa-envelope"></i> <a href="mailto:khalilo2y@hotmail.com">khalilo2y@gmail.com</a></p>
-                <p><i class="fas fa-phone"></i> <a href="https://wa.me/21629401131" target="_blank">0021629401131</a></p>
-                <p><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/khalilo2ya/" target="_blank">LinkedIn</a></p>
-                <p><i class="fab fa-facebook"></i> <a href="https://www.facebook.com/profile.php?id=100080065068201" target="_blank">Facebook</a></p>
+                <p><i class="fas fa-phone"></i> <a href="https://wa.me/21629401131" target="_blank">0021629401131</a>
+                </p>
+                <p><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/khalilo2ya/"
+                        target="_blank">LinkedIn</a></p>
+                <p><i class="fab fa-facebook"></i> <a href="https://www.facebook.com/profile.php?id=100080065068201"
+                        target="_blank">Facebook</a></p>
             </div>
         </div>
     </footer>
-    
+
     <script src="script.js"></script>
 </body>
+
 </html>
