@@ -52,7 +52,7 @@ function calculateLoan() {
     // If either years or months is 0, show an alert message
     if (years === 0 && months === 0) {
         alertContainer.innerHTML = `
-            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
                 <strong>تنبيه!</strong> يجب إدخال مدة زمنية للقرض (سنوات أو أشهر).
                 <span type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></span>
             </div>
