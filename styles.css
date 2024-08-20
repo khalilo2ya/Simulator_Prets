@@ -129,7 +129,7 @@ footer {
     position: relative;
     bottom: 0;
     /* width: 100%; */
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1);
     
     
 }
@@ -141,7 +141,7 @@ footer {
 
 .footer-content p {
     margin: 5px 0;
-    font-size: 1.2em;
+    font-size: 1em;
 }
 
 .footer-content .contact-info {
@@ -195,3 +195,11 @@ button {
     border-color: #28a745 !important;
 }
 
+
+
+.modal-header .btn-close{
+    margin: 0px !important;
+}
+a{
+    text-decoration: none !important;
+}
