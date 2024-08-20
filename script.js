@@ -54,7 +54,7 @@ function calculateLoan() {
         alertContainer.innerHTML = `
             <div class="alert alert-danger alert-dismissible fade show" role="alert">
                 <strong>تنبيه!</strong> يجب إدخال مدة زمنية للقرض (سنوات أو أشهر).
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                <span type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></span>
             </div>
         `;
         return;
